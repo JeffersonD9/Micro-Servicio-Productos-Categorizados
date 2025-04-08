@@ -1,0 +1,25 @@
+{
+  "name": "micro-servicio-productos-categorizados",
+  "version": "1.0.0",
+  "description": "Micro servicio para categorizar productos recibidos del Dane",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeffersonD9/Micro-Servicio-Productos-Categorizados.git"
+  },
+  "author": "Jefferson Steven Muñoz Delgado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeffersonD9/Micro-Servicio-Productos-Categorizados/issues"
+  },
+  "homepage": "https://github.com/JeffersonD9/Micro-Servicio-Productos-Categorizados#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.9"
+  }
+}

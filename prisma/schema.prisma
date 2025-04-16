@@ -14,15 +14,15 @@ datasource db {
 }
 model Product{
 
-  id Int @id @default(autoincrement())
-  Nombre  String @db.VarChar(50)
-  Descripcion  String @db.VarChar(200)  
-  id_Categoria Int
-  categorias Category @relation(fields: [id_Categoria],references: [id])  
+  Id Int @id @default(autoincrement())
+  Name  String @db.VarChar(50)
+  Description  String @db.VarChar(200)  
+  id_Category Int
+  categories Category @relation(fields: [id_Category],references: [Id])  
   }
 
 model Category {
-  id          Int         @id @default(autoincrement())
-  Nombre      String      @unique @db.VarChar(100)
-  productos   Product[]
+  Id          Int         @id @default(autoincrement())
+  Name      String      @unique @db.VarChar(100)
+  products   Product[]
   }

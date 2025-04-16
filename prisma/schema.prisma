@@ -6,26 +6,23 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-
-model Productos{
+model Product{
 
   id Int @id @default(autoincrement())
   Nombre  String @db.VarChar(50)
   Descripcion  String @db.VarChar(200)  
-  Precio   String @db.VarChar(20)  
   id_Categoria Int
-  categorias Categorias @relation(fields: [id_Categoria],references: [id])  
+  categorias Category @relation(fields: [id_Categoria],references: [id])  
   }
 
-model Categorias {
+model Category {
   id          Int         @id @default(autoincrement())
   Nombre      String      @unique @db.VarChar(100)
-  productos   Productos[]
+  productos   Product[]
   }

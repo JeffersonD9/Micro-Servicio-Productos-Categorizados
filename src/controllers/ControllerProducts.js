@@ -1,4 +1,4 @@
-import { ProductService } from "../services/ProductService";
+import { ProductService } from "../Helpers/Product.js";
 
 let service = ProductService;
 

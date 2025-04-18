@@ -1,4 +1,4 @@
-import {SECRET_TOKEN} from "../config.js"
+import {SECRET_TOKEN} from "../config/config.js"
 import  Jwt  from "jsonwebtoken";
 
 async function CreateAccesToken(payload){

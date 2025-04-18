@@ -1,12 +1,12 @@
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
-import { CRUDService } from "./CrudService";
+import { CRUDModel } from "./CRUDModel.js";
 
-class ProductService extends CRUDService{
+class Product extends CRUDModel{
     constructor(){
         super(prisma.product)
     }
 }
 
-export const ProductService = new ProductService();
+export const ProductService = new Product();

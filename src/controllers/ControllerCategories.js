@@ -1,4 +1,4 @@
-import { CategoryService } from "../services/CategoryService";
+import { CategoryService } from "../Helpers/Category.js";
 
 let service = CategoryService;
 

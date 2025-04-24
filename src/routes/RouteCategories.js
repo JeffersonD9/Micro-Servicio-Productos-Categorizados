@@ -7,12 +7,12 @@ const router = Router();
 
 // Rutas para categorías
 // Acceso permitido para admin y vendedor (lectura)
-router.get('/categories', verifyToken, authorizeRoles('admin', 'vendedor'), GetAllCategories);
-router.get('/categories/:id_category', verifyToken, authorizeRoles('admin', 'vendedor'), GetCategoryById);
+router.get('/categories', verifyToken, authorizeRoles(1, 2), GetAllCategories);
+router.get('/categories/:id_category', verifyToken, authorizeRoles(1, 2), GetCategoryById);
 
 // Solo admin puede modificar categorías (escritura)
-router.post('/categories', verifyToken, authorizeRoles('admin'), CreateCategory);
-router.put('/categories/:id_category', verifyToken, authorizeRoles('admin'), UpdateCategory);
-router.delete('/categories/:id_category', verifyToken, authorizeRoles('admin'), DeleteCategory);
+router.post('/categories', verifyToken, authorizeRoles(1), CreateCategory);
+router.put('/categories/:id_category', verifyToken, authorizeRoles(1), UpdateCategory);
+router.delete('/categories/:id_category', verifyToken, authorizeRoles(1), DeleteCategory);
 
 export default router;

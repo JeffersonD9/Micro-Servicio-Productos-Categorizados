@@ -7,12 +7,12 @@ const router = Router();
 
 // Rutas para productos
 // Acceso permitido para admin y vendedor (lectura)
-router.get('/products', verifyToken, authorizeRoles('admin', 'vendedor'), GetAllProducts);
-router.get('/products/:id_product', verifyToken, authorizeRoles('admin', 'vendedor'), GetProductById);
+router.get('/products', verifyToken, authorizeRoles(1, 2), GetAllProducts);
+router.get('/products/:id_product', verifyToken, authorizeRoles(1, 2), GetProductById);
 
 // Solo admin puede modificar productos (escritura)
-router.post('/products', verifyToken, authorizeRoles('admin'), CreateProduct);
-router.put('/products/:id_product', verifyToken, authorizeRoles('admin'), UpdateProduct);
-router.delete('/products/:id_product', verifyToken, authorizeRoles('admin'), DeleteProduct);
+router.post('/products', verifyToken, authorizeRoles(1), CreateProduct);
+router.put('/products/:id_product', verifyToken, authorizeRoles(1), UpdateProduct);
+router.delete('/products/:id_product', verifyToken, authorizeRoles(1), DeleteProduct);
 
 export default router;

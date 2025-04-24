@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { GetProductsByCategory, GetAllCategorizedProducts } from "../controllers/ControllerCategorizedProducts.js";
-import { verifyToken } from "../middlewares/verifyToken.js";
-import { authorizeRoles } from "../middlewares/authorizeRoles.js";
+import { GetProductsByCategory, GetAllCategorizedProducts } from "../controllers/ControllerProductsCategorized.js";
+import { verifyToken } from "../midedlewares/VerifyToken.js";
+import { authorizeRoles } from "../midedlewares/AuthorizedRole.js";
 
 const router = Router();
 

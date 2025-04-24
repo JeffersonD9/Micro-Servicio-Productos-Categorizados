@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { GetAllProducts, GetProductById, CreateProduct, UpdateProduct, DeleteProduct } from "../controllers/ControllerProducts.js";
-import { verifyToken } from "../middlewares/verifyToken.js";
-import { authorizeRoles } from "../middlewares/authorizeRoles.js";
+import { verifyToken } from "../midedlewares/VerifyToken.js";
+import { authorizeRoles } from "../midedlewares/AuthorizedRole.js";
 
 const router = Router();
 

@@ -24,8 +24,8 @@ app.use(cookieParser());
 // Routes
 
 app.use("/", homeRoute);
-app.use("/api", productRoutes);
-app.use("/api", categoryRoutes);
-app.use('/api', categorizedProductRoutes);
+app.use("/api-REST", productRoutes);
+app.use("/api-REST", categoryRoutes);
+app.use('/api-REST', categorizedProductRoutes);
 
 export default app;

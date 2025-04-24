@@ -5,6 +5,7 @@ export const verifyToken = (req, res, next) => {
   try {
     // Obtener el token del encabezado Authorization
     const authHeader = req.headers.authorization;
+    console.log(authHeader)
     
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
       return res.status(401).json({ 
@@ -14,7 +15,7 @@ export const verifyToken = (req, res, next) => {
     
     // Extraer el token (quitar el prefijo "Bearer ")
     const token = authHeader.split(' ')[1];
-    
+    console.log(token)
     // Verificar el token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     

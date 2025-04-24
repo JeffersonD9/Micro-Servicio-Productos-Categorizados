@@ -1,11 +1,18 @@
 import { Router } from "express";
 import { GetAllCategories, GetCategoryById, UpdateCategory, CreateCategory, DeleteCategory } from "../controllers/ControllerCategories.js";
-const router = Router()
+import { verifyToken } from "../middlewares/verifyToken.js";
+import { authorizeRoles } from "../middlewares/authorizeRoles.js";
 
-router.get('/categories', GetAllCategories);
-router.get('/categories/:id_category', GetCategoryById);
-router.post('/categories/create', CreateCategory);
-router.put('/categories/update/:id_category', UpdateCategory);
-router.delete('/categories/delete/:id_category', DeleteCategory);
+const router = Router();
 
-export default router
+// Rutas para categorías
+// Acceso permitido para admin y vendedor (lectura)
+router.get('/categories', verifyToken, authorizeRoles('admin', 'vendedor'), GetAllCategories);
+router.get('/categories/:id_category', verifyToken, authorizeRoles('admin', 'vendedor'), GetCategoryById);
+
+// Solo admin puede modificar categorías (escritura)
+router.post('/categories', verifyToken, authorizeRoles('admin'), CreateCategory);
+router.put('/categories/:id_category', verifyToken, authorizeRoles('admin'), UpdateCategory);
+router.delete('/categories/:id_category', verifyToken, authorizeRoles('admin'), DeleteCategory);
+
+export default router;

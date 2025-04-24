@@ -21,7 +21,7 @@ export class CRUDModel {
         return this.model.create({ data })
     }
 
-    async update(data) {
+    async update(where,data) {
 
         return this.model.update({ where, data })
     }

@@ -1,11 +1,18 @@
 import { Router } from "express";
 import { GetAllProducts, GetProductById, CreateProduct, UpdateProduct, DeleteProduct } from "../controllers/ControllerProducts.js";
-const router = Router()
+import { verifyToken } from "../middlewares/verifyToken.js";
+import { authorizeRoles } from "../middlewares/authorizeRoles.js";
 
-router.get('/products', GetAllProducts);
-router.get('/products/:id_product', GetProductById);
-router.post('/products/create', CreateProduct);
-router.put('/products/update/id:id_product', UpdateProduct);
-router.delete('/products/delete/:id_product', DeleteProduct);
+const router = Router();
 
-export default router
+// Rutas para productos
+// Acceso permitido para admin y vendedor (lectura)
+router.get('/products', verifyToken, authorizeRoles('admin', 'vendedor'), GetAllProducts);
+router.get('/products/:id_product', verifyToken, authorizeRoles('admin', 'vendedor'), GetProductById);
+
+// Solo admin puede modificar productos (escritura)
+router.post('/products', verifyToken, authorizeRoles('admin'), CreateProduct);
+router.put('/products/:id_product', verifyToken, authorizeRoles('admin'), UpdateProduct);
+router.delete('/products/:id_product', verifyToken, authorizeRoles('admin'), DeleteProduct);
+
+export default router;

@@ -5,7 +5,7 @@ export const verifyToken = (req, res, next) => {
   try {
     // Obtener el token del encabezado Authorization
     const authHeader = req.headers.authorization;
-    console.log(authHeader)
+    console.log("auth token",authHeader)
     
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
       return res.status(401).json({ 
@@ -27,7 +27,7 @@ export const verifyToken = (req, res, next) => {
     if (error.name === 'TokenExpiredError') {
       return res.status(401).json({ message: 'El token ha expirado' });
     }
-    
+  
     return res.status(401).json({ message: 'Token inválido' });
   }
 };

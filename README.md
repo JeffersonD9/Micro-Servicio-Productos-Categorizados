@@ -43,14 +43,12 @@ Esta API REST permite gestionar productos y categorías para una aplicación de 
 ## ⚙️ Configuración
 
 1. Clonar el repositorio
-2. Instalar dependencias:
+2. Instalar npm:
 
    ```bash
    npm install
-   installar dependiencias de uso
-   -prisma
-   -mysql
-   -Dotenv
-   -Cookie Parser
-   -Cors
-   -Express
+   
+4.  Instalar dependiencias necesarias:
+   
+     ```bash
+      npm install prisma mysql dotenv cookie-parser cors express

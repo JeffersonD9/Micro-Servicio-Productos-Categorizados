@@ -1,14 +1,15 @@
 import express from "express";
+import dotenv from 'dotenv'
 import morgan from "morgan";
-import { PORT, NODE_ENV } from "./config/config.js";
+import { PORT, NODE_ENV } from "./config.js"
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import productRoutes from "./routes/RouteProducts.js"
 import categoryRoutes from "./routes/RouteCategories.js"
 import homeRoute from "./routes/RouteHome.js";
 import categorizedProductRoutes from "./routes/RouteProductsCategorized.js"
-import dotenv from 'dotenv'
 
+dotenv.config()
 const app = express();
 app.use(cors());
 app.use(morgan("dev"));

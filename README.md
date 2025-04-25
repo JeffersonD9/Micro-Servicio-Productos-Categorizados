@@ -54,4 +54,4 @@ Esta API REST permite gestionar productos y categorías para una aplicación de 
 4.  Instalar dependiencias necesarias:
    
      ```bash
-      npm install prisma mysql dotenv cookie-parser cors express
+      npm install prisma mysql dotenv cookie-parser cors express morgan

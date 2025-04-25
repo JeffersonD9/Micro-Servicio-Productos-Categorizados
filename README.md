@@ -83,10 +83,15 @@ La API desplegada en la instancia EC2 actúa como intermediario entre la aplicac
     ```
    
 5. Configurar variables de entorno:
-   - Crear archivo `.env` en la raíz del proyecto con las siguientes variables:
+   - Crear archivo `.env` con el connectionstring a la db y en config.js van las variables de entorno de la app, como lo son port,secret_token etc.:
    ```
+   .env
    DATABASE_URL="mysql://usuario:contraseña@localhost:3306/nombre_db"
+
+   config.js
+   
    PORT=3000
+   SECRET_TOKEN = "My Secret-Token"
    ```
 
 6. Iniciar el servidor:

@@ -46,12 +46,16 @@ Esta API REST permite gestionar productos y categorías para una aplicación de 
 ## ⚙️ Configuración
 
 1. Clonar el repositorio
-2. Instalar npm:
+   
+   ```bash
+   git clone https://github.com/JeffersonD9/Micro-Servicio-Productos-Categorizados.git
+   
+3. Instalar npm:
 
    ```bash
    npm install
    
-4.  Instalar dependiencias necesarias:
+4.  Instalar dependiencias necesarias para su uso:
    
      ```bash
       npm install prisma mysql dotenv cookie-parser cors express

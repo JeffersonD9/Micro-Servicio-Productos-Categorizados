@@ -4,20 +4,20 @@ let service = CategoryService;
 
 export async function CreateCategory(req,res){
 
-     const {categoryName} = req.body;
+     const {Name} = req.body;
      console.log(categoryName)
 
     try {
 
-        const filterCategory = await service.any({Name : categoryName })
+        const filterCategory = await service.any({Name : Name })
 
         if(filterCategory){
             return res.status(409).json({message : "Esta categoría ya existe"})
         }
 
-       await service.create(categoryName);
+       await service.create(Name);
 
-        res.status(200).json({message : "Se creo con éxito la categoría: ", categoryName})
+        res.status(200).json({message : "Se creo con éxito la categoría: ", Name})
 
     } catch (error) {
         res.status(500).json({message : error})
@@ -26,11 +26,11 @@ export async function CreateCategory(req,res){
 
 export async function GetCategoryById(req,res) {
     
-    const id_category = parseInt(req.params.id_Categoria, 10);
+    const id_category = parseInt(req.params.id_category, 10);
 
     try {
         
-        const category = await service.first({where:{Id: id_category}});
+        const category = await service.first({Id: id_category});
         res.status(200).json({message : "Category", data : category})
 
     } catch (error) {
@@ -60,7 +60,7 @@ export async function GetAllCategories(req,res){
 
 export async function DeleteCategory(req,res){
 
-    const id_category = parseInt(req.params.id_categoria, 10);
+    const id_category = parseInt(req.params.id_category, 10);
 
     try {
     
@@ -79,7 +79,7 @@ export async function DeleteCategory(req,res){
 
 export async function UpdateCategory(params) {
 
-    const id_categoria = parseInt(req.params.id_categoria, 10);
+    const id_categoria = parseInt(req.params.id_category, 10);
     const { Nombre} = data;
 
     try {

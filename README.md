@@ -46,7 +46,7 @@ La API desplegada en la instancia EC2 actúa como intermediario entre la aplicac
 | ------ | ---- | ----------- | -------- |
 | GET | `/api-REST/products` | Obtener todos los productos | Admin, Vendedor |
 | GET | `/api-REST/products/:id_product` | Obtener un producto por ID | Admin, Vendedor |
-| POST | `/api-REST/products` | Crear un nuevo producto | Admin |
+| POST | `/api-REST/products/create` | Crear un nuevo producto | Admin |
 | PUT | `/api-REST/products/:id_product` | Actualizar un producto | Admin |
 | DELETE | `/api-REST/products/:id_product` | Eliminar un producto | Admin |
 

@@ -2,49 +2,49 @@ import { CategoryService } from "../Helpers/Category.js";
 
 let service = CategoryService;
 
-export async function CreateCategory(req,res){
+export async function CreateCategory(req, res) {
 
-     const {Name} = req.body;
-     console.log(categoryName)
+    const { Name } = req.body;
+    console.log(categoryName)
 
     try {
 
-        const filterCategory = await service.any({Name : Name })
+        const filterCategory = await service.any({ Name: Name })
 
-        if(filterCategory){
-            return res.status(409).json({message : "Esta categoría ya existe"})
+        if (filterCategory) {
+            return res.status(409).json({ message: "Esta categoría ya existe" })
         }
 
-       await service.create(Name);
+        await service.create(Name);
 
-        res.status(200).json({message : "Se creo con éxito la categoría: ", Name})
+        res.status(200).json({ message: "Se creo con éxito la categoría: ", Name })
 
     } catch (error) {
-        res.status(500).json({message : error})
+        res.status(500).json({ message: error })
     }
 }
 
-export async function GetCategoryById(req,res) {
-    
+export async function GetCategoryById(req, res) {
+
     const id_category = parseInt(req.params.id_category, 10);
 
     try {
-        
-        const category = await service.first({Id: id_category});
-        res.status(200).json({message : "Category", data : category})
+
+        const category = await service.first({ Id: id_category });
+        res.status(200).json({ message: "Category", data: category })
 
     } catch (error) {
         res.status(500).json({ message: error });
-        console.log(error); 
+        console.log(error);
     }
 }
 
-export async function GetAllCategories(req,res){    
+export async function GetAllCategories(req, res) {
     try {
-        
+
         const categories = await service.getAll();
-       
-          res.status(200).json({
+
+        res.status(200).json({
             success: true,
             message: "Categories fetched successfully",
             data: categories
@@ -58,32 +58,32 @@ export async function GetAllCategories(req,res){
     }
 }
 
-export async function DeleteCategory(req,res){
+export async function DeleteCategory(req, res) {
 
     const id_category = parseInt(req.params.id_category, 10);
 
     try {
-    
-        const categoryToDelete = service.delete({where:{
-            Id: id_category
-        }});
 
-        res.status(200).json({message: "Categoria Borrada", data : categoryToDelete})
+        const categoryToDelete = service.delete({
+            Id: id_category
+        });
+
+        res.status(200).json({ message: "Categoria Borrada", data: categoryToDelete })
 
     } catch (error) {
         res.status(500).json({ message: error });
-      console.log(error);
+        console.log(error);
     }
-    
+
 }
 
-export async function UpdateCategory(params) {
+export async function UpdateCategory(res,req) {
 
     const id_categoria = parseInt(req.params.id_category, 10);
-    const { Nombre} = data;
+    const { Nombre } = data;
 
     try {
-          if (isNaN(id_categoria)) {
+        if (isNaN(id_categoria)) {
             return res.status(400).json({
                 success: false,
                 message: "Invalid category ID"
@@ -105,8 +105,8 @@ export async function UpdateCategory(params) {
             data: updatedCategory
         });
     } catch (error) {
-         
-          res.status(500).json({
+
+        res.status(500).json({
             success: false,
             message: "An error occurred while updating the category"
         });

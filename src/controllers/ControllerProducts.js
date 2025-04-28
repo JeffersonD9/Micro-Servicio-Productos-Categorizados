@@ -68,7 +68,7 @@ export async function GetAllProducts(req, res) {
 }
 
 export async function DeleteProduct(req, res) {
-  const id_product = parseInt(req.params.id_producto, 10);
+  const id_product = parseInt(req.params.id_product, 10);
 
   try {
     const deleted = await service.delete({ where: { Id: id_product } });

@@ -12,7 +12,7 @@ router.get('/products/:id_product', verifyToken, authorizeRoles(1, 2), GetProduc
 
 // Solo admin puede modificar productos (escritura)
 router.post('/products/create', verifyToken, authorizeRoles(1), CreateProduct);
-router.put('/products/:id_product', verifyToken, authorizeRoles(1), UpdateProduct);
-router.delete('/products/:id_product', verifyToken, authorizeRoles(1), DeleteProduct);
+router.put('/products/edit/:id_product', verifyToken, authorizeRoles(1), UpdateProduct);
+router.delete('/products/delete/:id_product', verifyToken, authorizeRoles(1), DeleteProduct);
 
 export default router;

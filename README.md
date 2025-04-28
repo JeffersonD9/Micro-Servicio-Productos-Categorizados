@@ -17,31 +17,29 @@ Esta API REST permite gestionar productos y categorías para una aplicación de 
 ## 📦 Endpoints
 
 ### 🔹 Productos
-
 | Método | Ruta | Descripción | Permisos |
 | ------ | ---- | ----------- | -------- |
-| GET | `/api/products` | Obtener todos los productos | Admin, Vendedor |
-| GET | `/api/products/:id_product` | Obtener un producto por ID | Admin, Vendedor |
-| POST | `/api/products` | Crear un nuevo producto | Admin |
-| PUT | `/api/products/:id_product` | Actualizar un producto | Admin |
-| DELETE | `/api/products/:id_product` | Eliminar un producto | Admin |
+| GET | `/api-REST/products` | Obtener todos los productos | Admin, Vendedor |
+| GET | `/api-REST/products/:id_product` | Obtener un producto por ID | Admin, Vendedor |
+| POST | `/api-REST/products` | Crear un nuevo producto | Admin |
+| PUT | `/api-REST/products/:id_product` | Actualizar un producto | Admin |
+| DELETE | `/api-REST/products/:id_product` | Eliminar un producto | Admin |
 
 ### 🔸 Categorías
-
 | Método | Ruta | Descripción | Permisos |
 | ------ | ---- | ----------- | -------- |
-| GET | `/api/categories` | Obtener todas las categorías | Admin, Vendedor |
-| GET | `/api/categories/:id_category` | Obtener categoría por ID | Admin, Vendedor |
-| POST | `/api/categories` | Crear una nueva categoría | Admin |
-| PUT | `/api/categories/:id_category` | Actualizar una categoría | Admin |
-| DELETE | `/api/categories/:id_category` | Eliminar una categoría | Admin |
+| GET | `/api-REST/categories` | Obtener todas las categorías | Admin, Vendedor |
+| GET | `/api-REST/categories/:id_category` | Obtener categoría por ID | Admin, Vendedor |
+| POST | `/api-REST/categories` | Crear una nueva categoría | Admin |
+| PUT | `/api-REST/categories/:id_category` | Actualizar una categoría | Admin |
+| DELETE | `/api-REST/categories/:id_category` | Eliminar una categoría | Admin |
 
 ### 🔹🔸 Productos Categorizados
-
 | Método | Ruta | Descripción | Permisos |
 | ------ | ---- | ----------- | -------- |
-| GET | `/api/categorized-products` | Obtener productos categorizados | Admin, Vendedor |
-| GET | `/api/categories/:categoryId/products` | Obtener productos por categoría | Admin, Vendedor |
+| GET | `/api-REST/categorized-products` | Obtener productos categorizados | Admin, Vendedor |
+| GET | `/api-REST/categories/:categoryId/products` | Obtener productos por categoría | Admin, Vendedor |
+
 
 ## ⚙️ Configuración
 

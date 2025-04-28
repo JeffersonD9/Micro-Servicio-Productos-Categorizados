@@ -82,6 +82,7 @@ export async function DeleteProduct(req, res) {
   }
 }
 
+
 export async function UpdateProduct(req, res) {
   try {
     const id_product = parseInt(req.params.id_producto, 10);

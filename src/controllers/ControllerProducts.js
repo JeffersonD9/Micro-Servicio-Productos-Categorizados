@@ -35,7 +35,7 @@ export async function GetProductById(req, res) {
   const id_product = parseInt(req.params.id_producto, 10);
 
   try {
-    const product = await service.first({ where: { Id: id_product } });
+    const product = await service.first({ Id: id_product });
 
     if (!product) {
       return res.status(404).json({ message: "Producto no encontrado" });

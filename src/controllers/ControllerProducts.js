@@ -5,7 +5,7 @@ let service = ProductService;
 export async function CreateProduct(req, res) {
 
   const { Name } = req.body;
-  let { categoryId } = req.body;
+  let { id_Category } = req.body;
 
   try {
 
@@ -13,7 +13,7 @@ export async function CreateProduct(req, res) {
       Name: Name,
     });
 
-    if (categoryId === undefined || categoryId === null) {
+    if (id_Category === undefined || id_Category === null) {
       return res.status(409).json({ message: "Debe Categorizar el producto" });
     }
 
@@ -21,10 +21,10 @@ export async function CreateProduct(req, res) {
       return res.status(409).json({ message: "Este producto ya existe" });
     }
 
-    var nameProduct = await service.CreateProduct(Name, categoryId);
+    var nameProduct = await service.CreateProduct(Name, id_Category);
 
     res.status(200).json({
-      message: "Se creó con éxito el producto",nameProduct
+      message: "Se creó con éxito el producto", nameProduct
     });
   } catch (error) {
     res.status(500).json({ message: error.message });

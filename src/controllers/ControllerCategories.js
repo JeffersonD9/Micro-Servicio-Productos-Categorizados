@@ -4,12 +4,12 @@ let service = CategoryService;
 
 export async function CreateCategory(req,res){
 
-     const {categoryName,categoryId} = req.body;
+     const {categoryName} = req.body;
      console.log(categoryName)
 
     try {
 
-        const filterCategory = await service.any({Name : categoryName, Id :categoryId })
+        const filterCategory = await service.any({Name : categoryName })
 
         if(filterCategory){
             return res.status(409).json({message : "Esta categoría ya existe"})

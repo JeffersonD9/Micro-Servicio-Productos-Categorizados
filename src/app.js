@@ -30,21 +30,21 @@ app.use("/api-REST", productRoutes);
 app.use("/api-REST", categoryRoutes);
 app.use('/api-REST', categorizedProductRoutes);
 
-import jwt from 'jsonwebtoken';
+// import jwt from 'jsonwebtoken';
 
-const token2 = 'd5fFRR6oVx91DpdZpk2i-Token'; // reemplazá esto por el valor real o process.env.JWT_SECRET
+// const token2 = 'd5fFRR6oVx91DpdZpk2i-Token'; // reemplazá esto por el valor real o process.env.JWT_SECRET
 
-const token = jwt.sign(
-  {
-    id: 1,
-    role: 1, // admin
-    userName: 'admin_test'
-  },
-  token2,
-  { expiresIn: '1d' }
-);
+// const token = jwt.sign(
+//   {
+//     id: 1,
+//     role: 1, // admin
+//     userName: 'admin_test'
+//   },
+//   token2,
+//   { expiresIn: '1d' }
+// );
 
-console.log('Token de prueba:', token);
+// console.log('Token de prueba:', token);
 
 
 export default app;

@@ -11,7 +11,7 @@ router.get('/products', verifyToken, authorizeRoles(1, 2), GetAllProducts);
 router.get('/products/:id_product', verifyToken, authorizeRoles(1, 2), GetProductById);
 
 // Solo admin puede modificar productos (escritura)
-router.post('/products', verifyToken, authorizeRoles(1), CreateProduct);
+router.post('/products/create', verifyToken, authorizeRoles(1), CreateProduct);
 router.put('/products/:id_product', verifyToken, authorizeRoles(1), UpdateProduct);
 router.delete('/products/:id_product', verifyToken, authorizeRoles(1), DeleteProduct);
 

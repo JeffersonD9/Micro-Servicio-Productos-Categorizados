@@ -11,6 +11,8 @@ export async function CreateProduct(req, res) {
       Name: productName,
     });
     
+    console.log(existingProduct)
+
     if (categoryId === undefined || categoryId === null) {
       categoryId = 0;
     }

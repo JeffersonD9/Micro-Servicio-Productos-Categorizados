@@ -14,7 +14,7 @@ export async function CreateProduct(req, res) {
     });
 
     if (categoryId === undefined || categoryId === null) {
-      categoryId = 0;
+      return res.status(409).json({ message: "Debe Categorizar el producto" });
     }
 
     if (existingProduct) {

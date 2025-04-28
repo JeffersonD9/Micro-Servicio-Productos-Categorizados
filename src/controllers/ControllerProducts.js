@@ -71,7 +71,7 @@ export async function DeleteProduct(req, res) {
   const id_product = parseInt(req.params.id_product, 10);
 
   try {
-    const deleted = await service.delete({ where: { Id: id_product } });
+    const deleted = await service.delete({ Id: id_product });
 
     res.status(200).json({
       message: "Producto eliminado",

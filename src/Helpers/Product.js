@@ -8,12 +8,11 @@ class Product extends CRUDModel {
         super(prisma.product)
     }
 
-    async CreateProduct(name,categoryId) {
+    async CreateProduct(name, categoryId) {
         var newProduct = await prisma.product.create({
             data: {
                 Name: name,
                 Description: "",
-                id_Category: categoryId,
                 categories: {
                     connect: {
                         id: categoryId,

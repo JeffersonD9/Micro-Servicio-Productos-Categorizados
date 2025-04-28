@@ -13,7 +13,7 @@ class Product extends CRUDModel {
             data: {
                 Name: name,
                 Description: "",
-                CategoryId: categoryId,
+                id_Category: categoryId,
                 categories: {
                     connect: {
                         id: categoryId,

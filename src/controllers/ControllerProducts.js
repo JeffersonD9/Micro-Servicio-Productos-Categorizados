@@ -32,7 +32,7 @@ export async function CreateProduct(req, res) {
 }
 
 export async function GetProductById(req, res) {
-  const id_product = parseInt(req.params.id_producto, 10);
+  const id_product = parseInt(req.params.id_product, 10);
 
   try {
     const product = await service.first({ Id: id_product });

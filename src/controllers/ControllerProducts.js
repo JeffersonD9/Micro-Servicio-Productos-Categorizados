@@ -3,32 +3,28 @@ import { ProductService } from "../Helpers/Product.js";
 let service = ProductService;
 
 export async function CreateProduct(req, res) {
-  const { productName } = req.body;
+
+  const { Name } = req.body;
   let { categoryId } = req.body;
+
   try {
-    
+
     const existingProduct = await service.any({
-      Name: productName,
+      Name: Name,
     });
-    
-    console.log(existingProduct)
 
     if (categoryId === undefined || categoryId === null) {
       categoryId = 0;
     }
-    
+
     if (existingProduct) {
       return res.status(409).json({ message: "Este producto ya existe" });
     }
 
-    await service.create({
-      Name: productName,
-      CategoryId: categoryId,
-    });
+    var nameProduct = await service.CreateProduct(Name, categoryId);
 
     res.status(200).json({
-      message: "Se creó con éxito el producto",
-      product: productName,
+      message: "Se creó con éxito el producto",nameProduct
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -53,21 +49,21 @@ export async function GetProductById(req, res) {
 
 export async function GetAllProducts(req, res) {
   try {
-    
+
     const products = await service.getAll();
-    
+
     res.status(200).json({
-            success: true,
-            message: "Products fetched successfully",
-            data: products
-        });
+      success: true,
+      message: "Products fetched successfully",
+      data: products
+    });
 
   } catch (error) {
-    
-   res.status(500).json({
-            success: false,
-            message: "An error occurred while fetching Products"
-        });
+
+    res.status(500).json({
+      success: false,
+      message: "An error occurred while fetching Products"
+    });
   }
 }
 
@@ -100,7 +96,7 @@ export async function UpdateProduct(req, res) {
 
     const updateData = {};
     if (Name !== undefined) updateData.Name = Name;
-    if (CategoryId !== undefined) updateData.id_Category  = CategoryId;
+    if (CategoryId !== undefined) updateData.id_Category = CategoryId;
 
     if (Object.keys(updateData).length === 0) {
       return res.status(400).json({

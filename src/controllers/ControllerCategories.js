@@ -39,18 +39,22 @@ export async function GetCategoryById(req,res) {
     }
 }
 
-export async function GetAllCategories(){
-    
-
+export async function GetAllCategories(req,res){    
     try {
         
         const categories = await service.getAll();
-        console.log(categories)
-        res.status(200)
+       
+          res.status(200).json({
+            success: true,
+            message: "Categories fetched successfully",
+            data: categories
+        });
 
     } catch (error) {
-        res.status(500).json({ message: error });
-        console.log(error);
+        res.status(500).json({
+            success: false,
+            message: "An error occurred while fetching categories"
+        });
     }
 }
 
@@ -79,8 +83,40 @@ export async function UpdateCategory(params) {
     const { Nombre} = data;
 
     try {
-        
+          if (isNaN(id_categoria)) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid category ID"
+            });
+        }
+
+        if (!Nombre) {
+            return res.status(400).json({
+                success: false,
+                message: "Category name is required"
+            });
+        }
+
+        const updatedCategory = await service.update(id_categoria, { Nombre });
+
+        res.status(200).json({
+            success: true,
+            message: "Category updated successfully",
+            data: updatedCategory
+        });
+
+       const updatedCategory = await service.update(id_categoria, { Nombre });
+
+        res.status(200).json({
+            success: true,
+            message: "Category updated successfully",
+            data: updatedCategory
+        });
     } catch (error) {
-        
+         
+          res.status(500).json({
+            success: false,
+            message: "An error occurred while updating the category"
+        });
     }
 }

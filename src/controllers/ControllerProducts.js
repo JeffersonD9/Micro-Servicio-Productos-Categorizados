@@ -48,10 +48,21 @@ export async function GetProductById(req, res) {
 
 export async function GetAllProducts(req, res) {
   try {
+    
     const products = await service.getAll();
-    res.status(200).json({ data: products });
+    
+    res.status(200).json({
+            success: true,
+            message: "Products fetched successfully",
+            data: products
+        });
+
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    
+   res.status(500).json({
+            success: false,
+            message: "An error occurred while fetching Products"
+        });
   }
 }
 
@@ -71,20 +82,45 @@ export async function DeleteProduct(req, res) {
 }
 
 export async function UpdateProduct(req, res) {
-  const id_product = parseInt(req.params.id_producto, 10);
-  const { Name, Price, CategoryId } = req.body;
-
   try {
+    const id_product = parseInt(req.params.id_producto, 10);
+    const { Name, CategoryId } = req.body;
+
+    if (isNaN(id_product)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid product ID",
+      });
+    }
+
+    const updateData = {};
+    if (Name !== undefined) updateData.Name = Name;
+    if (CategoryId !== undefined) updateData.id_Category  = CategoryId;
+
+    if (Object.keys(updateData).length === 0) {
+      return res.status(400).json({
+        success: false,
+        message: "No valid fields to update",
+      });
+    }
+
     const updated = await service.update({
       where: { Id: id_product },
-      data: { Name, Price, CategoryId },
+      data: updateData,
     });
 
     res.status(200).json({
+      success: true,
       message: "Producto actualizado con éxito",
       data: updated,
     });
+
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error("Error updating product:", error);
+    res.status(500).json({
+      success: false,
+      message: "An error occurred while updating the product",
+    });
   }
 }
+

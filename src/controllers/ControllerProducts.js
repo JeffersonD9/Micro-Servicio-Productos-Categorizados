@@ -3,21 +3,24 @@ import { ProductService } from "../Helpers/Product.js";
 let service = ProductService;
 
 export async function CreateProduct(req, res) {
-  const { productName, productId, price, categoryId } = req.body;
-
+  const { productName } = req.body;
+  let { categoryId } = req.body;
   try {
+    
     const existingProduct = await service.any({
       Name: productName,
-      Id: productId,
     });
-
+    
+    if (categoryId === undefined || categoryId === null) {
+      categoryId = 0;
+    }
+    
     if (existingProduct) {
       return res.status(409).json({ message: "Este producto ya existe" });
     }
 
     await service.create({
       Name: productName,
-      Price: price,
       CategoryId: categoryId,
     });
 

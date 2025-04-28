@@ -104,14 +104,6 @@ export async function UpdateCategory(params) {
             message: "Category updated successfully",
             data: updatedCategory
         });
-
-       const updatedCategory = await service.update(id_categoria, { Nombre });
-
-        res.status(200).json({
-            success: true,
-            message: "Category updated successfully",
-            data: updatedCategory
-        });
     } catch (error) {
          
           res.status(500).json({

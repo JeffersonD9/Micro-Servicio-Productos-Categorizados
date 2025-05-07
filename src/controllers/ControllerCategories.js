@@ -97,7 +97,7 @@ export async function UpdateCategory(req, res) {
             });
         }
 
-        const updatedCategory = await service.update({ id: id_categoria }, { Name });
+        const updatedCategory = await service.update({ Id: id_categoria }, { Name });
 
         res.status(200).json({
             success: true,

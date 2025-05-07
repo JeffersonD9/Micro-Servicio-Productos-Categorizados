@@ -90,14 +90,14 @@ export async function UpdateCategory(req, res) {
             });
         }
 
-        if (!Nombre) {
+        if (!Name) {
             return res.status(400).json({
                 success: false,
                 message: "Category name is required"
             });
         }
 
-        const updatedCategory = await service.update(id_categoria, { Nombre });
+        const updatedCategory = await service.update(id_categoria, { Name });
 
         res.status(200).json({
             success: true,

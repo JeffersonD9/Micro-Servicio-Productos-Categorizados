@@ -5,7 +5,7 @@ let service = ProductService;
 export async function CreateProduct(req, res) {
 
   const { Name } = req.body;
-  let { id_Category } = req.body;
+  let { CategoryId } = req.body;
 
   try {
 
@@ -13,7 +13,7 @@ export async function CreateProduct(req, res) {
       Name: Name,
     });
 
-    if (id_Category === undefined || id_Category === null) {
+    if (CategoryId === undefined || CategoryId === null) {
       return res.status(409).json({ message: "Debe Categorizar el producto" });
     }
 
@@ -21,7 +21,7 @@ export async function CreateProduct(req, res) {
       return res.status(409).json({ message: "Este producto ya existe" });
     }
 
-    var nameProduct = await service.CreateProduct(Name, id_Category);
+    var nameProduct = await service.CreateProduct(Name, CategoryId);
 
     res.status(200).json({
       message: "Se creó con éxito el producto", nameProduct
@@ -85,7 +85,7 @@ export async function DeleteProduct(req, res) {
 
 export async function UpdateProduct(req, res) {
   try {
-    const id_product = parseInt(req.params.id_producto, 10);
+    const id_product = parseInt(req.params.id_product, 10);
     const { Name, CategoryId } = req.body;
 
     if (isNaN(id_product)) {

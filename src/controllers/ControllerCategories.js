@@ -14,7 +14,7 @@ export async function CreateCategory(req, res) {
             return res.status(409).json({ message: "Esta categoría ya existe" })
         }
 
-        await service.create(Name);
+        await service.create({ Name: Name });
 
         res.status(200).json({ message: "Se creo con éxito la categoría: ", Name })
 

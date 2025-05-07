@@ -58,22 +58,28 @@ export async function GetAllCategories(req, res) {
 }
 
 export async function DeleteCategory(req, res) {
-
     const id_category = parseInt(req.params.id_category, 10);
 
     try {
-
-        const categoryToDelete = service.delete({
-            Id: id_category
+        const existingCategory = await service.first({
+            where: { Id: id_category }
         });
 
-        res.status(200).json({ message: "Categoria Borrada", data: categoryToDelete })
+        if (!existingCategory) {
+            return res.status(404).json({ message: "Categoría no encontrada" });
+        }
+        
+        await UncategorizedProducts(id_category);
+        await prisma.category.delete({
+            where: { Id: id_category }
+        });
+
+        res.status(200).json({ message: "Categoría eliminada y productos actualizados" });
 
     } catch (error) {
-        res.status(500).json({ message: error });
-        console.log(error);
+        console.error(error);
+        res.status(500).json({ message: "Error al eliminar la categoría", error });
     }
-
 }
 
 export async function UpdateCategory(req, res) {

@@ -77,10 +77,10 @@ export async function DeleteCategory(req, res) {
 
 }
 
-export async function UpdateCategory(res,req) {
-
+export async function UpdateCategory(req, res) {
+    
     const id_categoria = parseInt(req.params.id_category, 10);
-    const { Nombre } = data;
+    const { Nombre } = req.body;
 
     try {
         if (isNaN(id_categoria)) {

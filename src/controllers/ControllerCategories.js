@@ -80,8 +80,8 @@ export async function DeleteCategory(req, res) {
 export async function UpdateCategory(req, res) {
     
     const id_categoria = parseInt(req.params.id_category, 10);
-    const { Nombre } = req.body;
-    console.log(Nombre)
+    const { Name } = req.body;
+    console.log(Name)
     try {
         if (isNaN(id_categoria)) {
             return res.status(400).json({

@@ -97,7 +97,7 @@ export async function UpdateProduct(req, res) {
 
     const updateData = {};
     if (Name !== undefined) updateData.Name = Name;
-    if (CategoryId !== undefined) updateData.id_Category = CategoryId;
+    if (CategoryId !== undefined) updateData.CategoryId = CategoryId;
 
     if (Object.keys(updateData).length === 0) {
       return res.status(400).json({

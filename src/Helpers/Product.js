@@ -9,20 +9,16 @@ class Product extends CRUDModel {
     }
 
     async CreateProduct(name, categoryId) {
-        const newProduct = await prisma.product.create({
-            data: {
-                Name: name,
-                Description: "",
-                categories: {
-                    connect: {
-                        Id: categoryId
-                    }
-                }
-            }
-        });
+    const newProduct = await prisma.product.create({
+      data: {
+        Name: name,
+        Description: "",
+        id_Category: categoryId
+      }
+    });
+    return newProduct.Name;
+  }
 
-        return newProduct.Name;
-    }
 }
 
 export const ProductService = new Product();

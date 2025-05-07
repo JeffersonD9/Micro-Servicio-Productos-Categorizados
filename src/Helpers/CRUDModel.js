@@ -21,11 +21,12 @@ export class CRUDModel {
         return this.model.create({ data })
     }
 
-    async update(where,data) {
-
-        return this.model.update({ where, data })
-    }
-
+   async update(where, data) {
+    return this.model.update({
+        where,
+        data 
+    });
+}
     async delete(where) {
         return this.model.delete({ where })
     }

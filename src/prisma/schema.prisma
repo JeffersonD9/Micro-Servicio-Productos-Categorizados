@@ -18,7 +18,7 @@ model Product{
   Name  String @db.VarChar(50)
   Description  String @db.VarChar(200)  
   id_Category Int
-  categories Category @relation(fields: [id_Category],references: [Id])  
+  categories Category @relation(fields: [id_Category], references: [Id], onDelete: Cascade)
   }
 
 model Category {

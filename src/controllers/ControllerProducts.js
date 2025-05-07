@@ -82,46 +82,48 @@ export async function DeleteProduct(req, res) {
   }
 }
 
-
 export async function UpdateProduct(req, res) {
   try {
     const id_product = parseInt(req.params.id_product, 10);
-    const { Name, CategoryId } = req.body;
-
+    const { Name, CategoryId, Description } = req.body;
+    
     if (isNaN(id_product)) {
       return res.status(400).json({
         success: false,
         message: "Invalid product ID",
       });
     }
-
+    
+    // Preparar los datos de actualización
     const updateData = {};
     if (Name !== undefined) updateData.Name = Name;
-    if (CategoryId !== undefined) updateData.CategoryId = CategoryId;
-
+    if (Description !== undefined) updateData.Description = Description;
+    if (CategoryId !== undefined) updateData.id_Category = CategoryId;
+    
     if (Object.keys(updateData).length === 0) {
       return res.status(400).json({
         success: false,
         message: "No valid fields to update",
       });
     }
-
-    const updated = await service.update({
-      where: { Id: id_product },
-      data: updateData,
-    });
-
+    
+    // Llamar al método update con la estructura correcta
+    const updated = await service.update(
+      { Id: id_product }, // where
+      updateData          // data
+    );
+    
     res.status(200).json({
       success: true,
       message: "Producto actualizado con éxito",
       data: updated,
     });
-
   } catch (error) {
     console.error("Error updating product:", error);
     res.status(500).json({
       success: false,
       message: "An error occurred while updating the product",
+      error: error.message
     });
   }
 }

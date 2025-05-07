@@ -3,30 +3,30 @@ import { ProductService } from "../Helpers/Product.js";
 let service = ProductService;
 
 export async function CreateProduct(req, res) {
-
   const { Name } = req.body;
-  let { CategoryId } = req.body;
-
+  let { CategoryId, Description = "" } = req.body;
+  
   try {
-
     const existingProduct = await service.any({
       Name: Name,
     });
-
+    
     if (CategoryId === undefined || CategoryId === null) {
       return res.status(409).json({ message: "Debe Categorizar el producto" });
     }
-
+    
     if (existingProduct) {
       return res.status(409).json({ message: "Este producto ya existe" });
     }
-
-    var nameProduct = await service.CreateProduct(Name, CategoryId);
-
+        
+    var nameProduct = await service.CreateProduct(Name, CategoryId, Description);
+    
     res.status(200).json({
-      message: "Se creó con éxito el producto", nameProduct
+      message: "Se creó con éxito el producto", 
+      nameProduct
     });
   } catch (error) {
+    console.error("Error al crear producto:", error);
     res.status(500).json({ message: error.message });
   }
 }

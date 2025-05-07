@@ -8,7 +8,7 @@ class Category extends CRUDModel{
         super(prisma.category)
     }
     
-async function UncategorizedProducts(id_category) {
+async UncategorizedProducts(id_category) {
     const result = await prisma.product.updateMany({
         where: { id_Category: id_category },
         data: { id_Category: 0 }

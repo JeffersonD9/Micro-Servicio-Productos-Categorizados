@@ -81,7 +81,7 @@ export async function UpdateCategory(req, res) {
     
     const id_categoria = parseInt(req.params.id_category, 10);
     const { Nombre } = req.body;
-
+    console.log(Nombre)
     try {
         if (isNaN(id_categoria)) {
             return res.status(400).json({

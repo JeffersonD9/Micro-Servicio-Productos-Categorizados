@@ -5,7 +5,6 @@ let service = CategoryService;
 export async function CreateCategory(req, res) {
 
     const { Name } = req.body;
-    console.log(categoryName)
 
     try {
 

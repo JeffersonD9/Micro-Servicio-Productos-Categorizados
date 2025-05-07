@@ -33,52 +33,98 @@ export async function CreateProduct(req, res) {
 
 export async function GetProductById(req, res) {
   const id_product = parseInt(req.params.id_product, 10);
-
+  
+  if (isNaN(id_product)) {
+    return res.status(400).json({ 
+      success: false,
+      message: "ID de producto inválido" 
+    });
+  }
+  
   try {
     const product = await service.first({ Id: id_product });
-
+    
     if (!product) {
-      return res.status(404).json({ message: "Producto no encontrado" });
+      return res.status(404).json({ 
+        success: false,
+        message: "Producto no encontrado" 
+      });
     }
-
-    res.status(200).json({ message: "Producto encontrado", data: product });
+    
+    res.status(200).json({ 
+      success: true,
+      message: "Producto encontrado", 
+      data: product 
+    });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error("Error al obtener producto por ID:", error);
+    res.status(500).json({ 
+      success: false,
+      message: "Error al obtener el producto",
+      error: error.message
+    });
   }
 }
 
 export async function GetAllProducts(req, res) {
   try {
-
+    // Para filtros
+    // const filters = {}; 
+    // if (req.query.categoryId) filters.id_Category = parseInt(req.query.categoryId, 10);
+    
     const products = await service.getAll();
-
+    
     res.status(200).json({
       success: true,
-      message: "Products fetched successfully",
-      data: products
+      message: "Productos obtenidos exitosamente",
+      data: products,
+      count: products.length
     });
-
   } catch (error) {
-
+    console.error("Error al obtener todos los productos:", error);
     res.status(500).json({
       success: false,
-      message: "An error occurred while fetching Products"
+      message: "Ocurrió un error al obtener los productos",
+      error: error.message
     });
   }
 }
 
 export async function DeleteProduct(req, res) {
   const id_product = parseInt(req.params.id_product, 10);
-
+  
+  if (isNaN(id_product)) {
+    return res.status(400).json({ 
+      success: false,
+      message: "ID de producto inválido" 
+    });
+  }
+  
   try {
+    
+    const existingProduct = await service.first({ Id: id_product });
+    
+    if (!existingProduct) {
+      return res.status(404).json({ 
+        success: false,
+        message: "Producto no encontrado" 
+      });
+    }
+    
     const deleted = await service.delete({ Id: id_product });
-
+    
     res.status(200).json({
-      message: "Producto eliminado",
-      data: deleted,
+      success: true,
+      message: "Producto eliminado exitosamente",
+      data: deleted
     });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error("Error al eliminar producto:", error);
+    res.status(500).json({ 
+      success: false,
+      message: "Error al eliminar el producto",
+      error: error.message
+    });
   }
 }
 

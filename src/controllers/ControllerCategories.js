@@ -3,26 +3,28 @@ import { CategoryService } from "../Helpers/Category.js";
 let service = CategoryService;
 
 export async function CreateCategory(req, res) {
-
     const { Name } = req.body;
 
     try {
-
-        const filterCategory = await service.any({ Name: Name })
+        // Verifica si la categoría ya existe por nombre
+        const filterCategory = await service.any({ Name: Name });
 
         if (filterCategory) {
-            return res.status(409).json({ message: "Esta categoría ya existe" })
+            return res.status(409).json({ message: "Esta categoría ya existe" });
         }
 
-        await service.create({ Name: Name });
+        const { Id, ...cleanData } = req.body;
 
-        res.status(200).json({ message: "Se creo con éxito la categoría: ", Name })
+        await service.create(cleanData);
+
+        res.status(200).json({ message: "Se creó con éxito la categoría: ", Name });
 
     } catch (error) {
-        console.log(error)
-        res.status(500).json({ message: error })
+        console.log(error);
+        res.status(500).json({ message: error.message || error });
     }
 }
+
 
 export async function GetCategoryById(req, res) {
 

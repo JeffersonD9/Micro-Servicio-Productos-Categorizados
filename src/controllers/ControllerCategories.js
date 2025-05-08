@@ -7,25 +7,31 @@ export async function CreateCategory(req, res) {
     
     try {
       // Check if category already exists
-      const filterCategory = await service.any({ Name: Name });
+      const filterCategory = await prisma.category.findFirst({
+        where: { Name }
+      });
+      
       if (filterCategory) {
         return res.status(409).json({ message: "Esta categoría ya existe" });
       }
       
-      // Make sure we're passing correct data structure to Prisma
-      const newCategory = await service.create({
+      // Crear categoría - usando prisma directamente para evitar problemas del servicio
+      const newCategory = await prisma.category.create({
         data: {
-          Name: Name
+          Name
         }
       });
       
       res.status(200).json({ 
-        message: "Se creo con éxito la categoría: ", 
-        Name 
+        message: "Se creó con éxito la categoría", 
+        category: newCategory 
       });
     } catch (error) {
-      console.log(error);
-      res.status(500).json({ message: error.message });
+      console.log("Error detallado:", error);
+      res.status(500).json({ 
+        message: "Error al crear la categoría", 
+        error: error.message 
+      });
     }
   }
 

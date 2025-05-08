@@ -19,6 +19,7 @@ export async function CreateCategory(req, res) {
         res.status(200).json({ message: "Se creo con éxito la categoría: ", Name })
 
     } catch (error) {
+        console.log(error)
         res.status(500).json({ message: error })
     }
 }

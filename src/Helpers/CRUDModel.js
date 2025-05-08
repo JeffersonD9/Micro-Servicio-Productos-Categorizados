@@ -18,8 +18,10 @@ export class CRUDModel {
     }
 
     async create(data) {
-        return this.model.create({ data })
-    }
+        return prisma.category.create({
+          data: data.data || data // Handle both {data: {...}} and direct object formats
+        });
+      }
 
    async update(where, data) {
     return this.model.update({

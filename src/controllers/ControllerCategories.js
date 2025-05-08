@@ -4,26 +4,30 @@ let service = CategoryService;
 
 export async function CreateCategory(req, res) {
     const { Name } = req.body;
-
+    
     try {
-        // Verifica si la categoría ya existe por nombre
-        const filterCategory = await service.any({ Name: Name });
-
-        if (filterCategory) {
-            return res.status(409).json({ message: "Esta categoría ya existe" });
+      // Check if category already exists
+      const filterCategory = await service.any({ Name: Name });
+      if (filterCategory) {
+        return res.status(409).json({ message: "Esta categoría ya existe" });
+      }
+      
+      // Make sure we're passing correct data structure to Prisma
+      const newCategory = await service.create({
+        data: {
+          Name: Name
         }
-
-        const { Id, ...cleanData } = req.body;
-
-        await service.create(cleanData);
-
-        res.status(200).json({ message: "Se creó con éxito la categoría: ", Name });
-
+      });
+      
+      res.status(200).json({ 
+        message: "Se creo con éxito la categoría: ", 
+        Name 
+      });
     } catch (error) {
-        console.log(error);
-        res.status(500).json({ message: error.message || error });
+      console.log(error);
+      res.status(500).json({ message: error.message });
     }
-}
+  }
 
 
 export async function GetCategoryById(req, res) {

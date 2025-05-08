@@ -1,5 +1,6 @@
 import { CategoryService } from "../Helpers/Category.js";
-
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
 let service = CategoryService;
 
 export async function CreateCategory(req, res) {

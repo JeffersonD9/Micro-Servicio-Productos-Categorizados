@@ -1,0 +1,373 @@
+Verduras y hortalizas
+
+Acelga
+Ahuyama
+Ahuyamín (Sakata)
+Ajo
+Ajo importado
+Ají topito dulce
+Apio
+Berenjena
+Brócoli
+Calabacín
+Calabaza
+Cebolla puerro
+Cebolla cabezona blanca
+Cebolla cabezona blanca bogotana
+Cebolla cabezona blanca importada
+Cebolla cabezona blanca pastusa
+Cebolla cabezona roja
+Cebolla cabezona roja importada
+Cebolla cabezona roja ocañera
+Cebolla cabezona roja peruana
+Cebolla junca
+Cebolla junca Aquitania
+Cebolla junca Berlín
+Cebolla junca Tenerife
+Cebolla junca pastusa
+Cebollín chino
+Cilantro
+Coles
+Coliflor
+Espinaca
+Haba verde
+Habichuela
+Habichuela larga
+Lechuga Batavia
+Lechuga crespa verde
+Pepino cohombro
+Pepino de rellenar
+Perejil
+Pimentón
+Pimentón verde
+Remolacha
+Remolacha bogotana
+Remolacha regional
+Repollo blanco
+Repollo blanco bogotano
+Repollo morado
+Repollo verde
+Rábano rojo
+Tomate Riogrande
+Tomate Riogrande bumangués
+Tomate chonto
+Tomate chonto regional
+Tomate de árbol
+Tomate larga vida
+Tomate riñón
+Tomate riñón valluno
+Zanahoria
+Zanahoria bogotana
+Zanahoria larga vida
+
+Frutas
+
+Aguacate Choquette
+Aguacate Hass
+Aguacate común
+Aguacate papelillo
+Badea
+Banano Urabá
+Banano bocadillo
+Banano criollo
+Borojó
+Breva
+Cidra
+Ciruela importada
+Ciruela roja
+Coco
+Curuba
+Durazno importado
+Durazno nacional
+Feijoa
+Fresa
+Granadilla
+Guanábana
+Guayaba Atlántico
+Guayaba agria
+Guayaba común
+Guayaba manzana
+Guayaba pera
+Guayaba pera valluna
+Gulupa
+Higo
+Kiwi
+Limón Tahití
+Limón común
+Limón común Ciénaga
+Limón común valluno
+Limón mandarino
+Lulo
+Mandarina Arrayana
+Mandarina Oneco
+Mandarina común
+Mango Tommy
+Mango Yulima
+Mango común
+Mango de azúcar
+Mango manzano
+Manzana nacional
+Manzana roja importada
+Manzana royal gala importada
+Manzana verde importada
+Maracuyá
+Maracuyá antioqueño
+Maracuyá huilense
+Maracuyá santandereano
+Maracuyá valluno
+Melón Cantalup
+Mora de Castilla
+Naranja Sweet
+Naranja Valencia
+Naranja común
+Papaya Maradol
+Papaya Paulina
+Papaya tainung
+Patilla
+Patilla baby
+Pera importada
+Pera nacional
+Piña gold
+Piña manzana
+Piña perolera
+Pitahaya
+Tangelo
+Tomate de árbol
+Uchuva con cáscara
+Uva Isabela
+Uva importada
+Uva red globe nacional
+Uva roja
+Uva verde
+Zapote
+
+Tubérculos, raíces y plátanos
+
+Arracacha amarilla
+Arracacha blanca
+Papa Betina
+Papa ICA-Huila
+Papa Morasurco
+Papa Puracé
+Papa R-12 negra
+Papa R-12 roja
+Papa capira
+Papa criolla limpia
+Papa criolla sucia
+Papa nevada
+Papa parda pastusa
+Papa rubí
+Papa sabanera
+Papa superior
+Papa suprema
+Papa tocarreña
+Papa única
+Plátano comino
+Plátano dominico hartón maduro
+Plátano dominico hartón verde
+Plátano dominico verde
+Plátano guineo
+Plátano hartón maduro
+Plátano hartón verde
+Plátano hartón verde Eje Cafetero
+Plátano hartón verde ecuatoriano
+Plátano hartón verde llanero
+Ulluco
+Yuca ICA
+Yuca chirosa
+Yuca criolla
+Yuca llanera
+Ñame criollo
+Ñame diamante
+Ñame espino
+
+Granos y cereales
+
+Arroz blanco importado
+Arroz de primera
+Arroz de segunda
+Arroz excelso
+Arroz sopa cristal
+Arveja amarilla seca importada
+Arveja verde en vaina
+Arveja verde en vaina pastusa
+Arveja verde seca importada
+Avena en hojuelas
+Avena molida
+Chócolo mazorca
+Cuchuco de cebada
+Cuchuco de maíz
+Fríjol Uribe rosado
+Fríjol Zaragoza
+Fríjol bolón
+Fríjol cabeza negra importado
+Fríjol cabeza negra nacional
+Fríjol calima
+Fríjol cargamanto blanco
+Fríjol cargamanto rojo
+Fríjol nima calima
+Fríjol palomito importado
+Fríjol radical
+Fríjol verde bolo
+Fríjol verde cargamanto
+Fríjol verde en vaina
+Garbanzo importado
+Harina de trigo
+Harina precocida de maíz
+Lenteja importada
+Maíz Amarillo Cáscara
+Maíz Amarillo Cáscara Importado
+Maíz Amarillo Trillado
+Maíz blanco cáscara
+Maíz blanco retrillado
+Maíz blanco trillado
+Maíz pira
+
+Lácteos y huevos
+
+Huevo blanco A
+Huevo blanco AA
+Huevo blanco B
+Huevo blanco extra
+Huevo rojo A
+Huevo rojo AA
+Huevo rojo B
+Huevo rojo extra
+Leche en polvo
+Manteca
+Margarina
+Queso Caquetá
+Queso campesino
+Queso costeño
+Queso cuajada
+Queso doble crema
+
+Carnes
+
+Alas de pollo con costillar
+Alas de pollo sin costillar
+Carne de cerdo en canal
+Carne de cerdo, brazo con hueso
+Carne de cerdo, brazo sin hueso
+Carne de cerdo, cabeza de lomo
+Carne de cerdo, costilla
+Carne de cerdo, espinazo
+Carne de cerdo, lomo con hueso
+Carne de cerdo, lomo sin hueso
+Carne de cerdo, pernil con hueso
+Carne de cerdo, pernil sin hueso
+Carne de cerdo, tocineta plancha
+Carne de cerdo, tocino barriga
+Carne de cerdo, tocino papada
+Carne de res en canal
+Carne de res molida, murillo
+Carne de res, bola de brazo
+Carne de res, bola de pierna
+Carne de res, bota
+Carne de res, cadera
+Carne de res, centro de pierna
+Carne de res, chatas
+Carne de res, cogote
+Carne de res, costilla
+Carne de res, falda
+Carne de res, lomo de brazo
+Carne de res, lomo fino
+Carne de res, morrillo
+Carne de res, muchacho
+Carne de res, murillo
+Carne de res, paletero
+Carne de res, pecho
+Carne de res, punta de anca
+Carne de res, sobrebarriga
+Menudencias de pollo
+Muslos de pollo con rabadilla
+Muslos de pollo sin rabadilla
+Pechuga de pollo
+Pierna pernil con rabadilla
+Pierna pernil sin rabadilla
+Piernas de pollo
+Pollo entero congelado sin vísceras
+Pollo entero fresco sin vísceras
+Rabadillas de pollo
+
+Pescados
+
+Almejas con concha
+Almejas sin concha
+Bagre rayado en postas congelado
+Bagre rayado entero congelado
+Bagre rayado entero fresco
+Basa, entero congelado importado
+Basa, filete congelado importado
+Blanquillo entero fresco
+Bocachico criollo fresco
+Bocachico importado congelado
+Cachama de cultivo fresca
+Calamar anillos
+Calamar blanco entero
+Camarón tigre precocido seco
+Camarón tití precocido seco
+Capaz Magdalena fresco
+Cazuela de mariscos (paquete)
+Corvina, filete congelado nacional
+Langostino 16-20
+Langostino U12
+Merluza, filete importado
+Merluza, filete nacional
+Mojarra lora entera congelada
+Mojarra lora entera fresca
+Nicuro fresco
+Palmitos de mar
+Pargo rojo entero congelado
+Pargo rojo platero
+Pescado cabezas
+Róbalo, filete congelado
+Salmón, filete congelado
+Sierra entera congelada
+Tilapia roja entera congelada
+Tilapia roja entera fresca
+Tilapia, filete congelado
+Tilapia, lomitos
+Toyo blanco, filete congelado
+Trucha en corte mariposa
+Trucha entera fresca
+
+Procesados
+
+Aceite de palma
+Aceite girasol
+Aceite soya
+Aceite vegetal mezcla
+Arveja enlatada
+Azúcar morena
+Azúcar refinada
+Azúcar sulfitada
+Bocadillo veleño
+Café instantáneo
+Café molido
+Chocolate amargo
+Chocolate dulce
+Chocolate instantáneo
+Color (bolsita)
+Fécula de maíz
+Fríjol enlatado
+Galletas dulces redondas con crema
+Galletas saladas
+Gelatina
+Jugo de frutas
+Jugo instantáneo (sobre)
+Lomitos de atún en lata
+Maíz enlatado
+Mayonesa doy pack
+Mostaza doy pack
+Panela cuadrada blanca
+Panela cuadrada morena
+Panela en pastilla
+Panela redonda blanca
+Panela redonda morena
+Pastas alimenticias
+Sal yodada
+Salsa de tomate doy pack
+Sardinas en lata
+Sopa de pollo (caja)
+Vinagre

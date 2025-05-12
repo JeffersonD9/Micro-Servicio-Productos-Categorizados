@@ -4,7 +4,7 @@ const prisma = new PrismaClient();
 // Obtener productos por categoría
 export const GetProductsByCategory = async (req, res) => {
   try {
-    const categoryId = parseInt(req.params.id_categoria, 10);
+    const categoryId = parseInt(req.params.categoryId, 10);
     
     const products = await prisma.product.findMany({
       where: {
